@@ -92,7 +92,7 @@ double chord_method(const double search_begin, const double search_end)
         debugf("DF(%f)=%f; DF(%f)=%f; new x = %f\n", buff_begin, tmp_begin, buff_end, tmp_end, x_next);
         buff_begin = buff_end;
         buff_end = tmp;
-    } while (fabs(x_next - buff_end) > EPSILON && buff_begin >= search_end && buff_end <= search_end);
+    } while (fabs(x_next - buff_end) > EPSILON && buff_begin >= search_start && buff_end <= search_end);
     debugf("Chord method counted loops, with 2 DF(x) calls on each: %u\n", count_loops);
     return x_next;
 }
